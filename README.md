@@ -1,13 +1,18 @@
 # Powershells
 Various Powershells that were useful at some time.  Most scripts have more relevant information commented out in the code.  Please use at your leisure!
 
-### DeleteByIssuerThumbprint.ps1
+## Show-AllSystrayIcons.ps1
+Created to show all systray icons - tickbox removed from Windows 11 UI.  I don't want things running I can't see (and I have a widescreen to afford the real estate).
+- No switches, just sets all to show (in the registry)
+- Sends WM_SETTINGCHANGE to Explorer to prevent having to restart it to have these values re-read
+
+## DeleteCert-ByIssuerThumbprint.ps1
 Created to remove **host** certificates by testing each for a thumbprint from a specific **issuer**.  
 - Given that the 'BuildChain' method will create an object including host cert, SubCA, and CA certs, it is suitable for removing a cert where the thumbprint is from the host cert, direct parent subCA, a subCA further up a tree, the root CA itself.
 - Target store can be adjusted if necessary, currently fixed to **computer** store.
 - Script has a comment disabling the final delete instruction - if you can find/remove the comment character, you are qualified to use this script.
 
-### functions.ps1
+## functions.ps1
 Various helper functions that I would use often through projects.
 - Due to these being created for specific purposes and specific customers/targets, some might need minor bugfixing.
 
